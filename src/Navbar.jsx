@@ -12,6 +12,23 @@ export const Navbar = () => {
             replace: true,
         })
     }
+    const onRokan = () => {
+        navigate('/rokan', {
+          replace: true,
+          state: {
+            logged: true,
+          },
+        });
+    };
+    
+    const onKiirome = () => {
+      navigate('/kiirome', {
+        replace: true,
+        state: {
+          logged: true,
+        },
+      });
+  };
   return (
     <>
         <header>
@@ -25,6 +42,8 @@ export const Navbar = () => {
                   <div className='user'>
                     <span className="username">{state?.name}</span>
                     <button className='btn-logout' onClick={onLogout}>Cerrar sesion</button>
+                    <button onClick={onRokan}>Conoce a Rokan</button>
+                    <button onClick={onKiirome}>Conoce a Kiirome</button>
                   </div>    
                 ): (
                   <nav>
